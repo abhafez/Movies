@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './assets/images/logo.svg';
 import * as MoviesAPI from './MoviesAPI';
 import './App.css';
 
@@ -10,13 +10,11 @@ class App extends Component {
   }
 
   componentDidMount () {
-    MoviesAPI.searchMovie('jack reacher').then((movie) => {
+    MoviesAPI.searchByKeyword('love').then((movie) => {
       this.setState({
         movie: movie
       })
     });
-
-
   }
 
 

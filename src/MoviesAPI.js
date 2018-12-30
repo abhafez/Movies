@@ -12,3 +12,8 @@ export const searchMovie = (query) =>
     .then(res => res.json())
     .then(match => match)
 
+export const searchByKeyword = (keyword) =>
+  fetch(`${urlStart}search/keyword?${apiKey}&query=${keyword}`)
+    .then(res => res.json())
+    .then(match => match)
+
