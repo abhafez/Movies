@@ -10,11 +10,13 @@ class App extends Component {
   }
 
   componentDidMount () {
-    MoviesAPI.getMovie(500).then((movie) => {
+    MoviesAPI.searchMovie('jack reacher').then((movie) => {
       this.setState({
         movie: movie
       })
     });
+
+
   }
 
 
