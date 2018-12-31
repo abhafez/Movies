@@ -31,3 +31,9 @@ li {
     margin-left: 2em;
   }
 }
+
+#welcome-msg {
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+}

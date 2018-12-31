@@ -34,3 +34,7 @@ li .nav-link {
 
 li:first-of-type {
   margin-left: 2em; }
+
+@media screen and (max-width: 992px) {
+  #welcome-msg {
+    display: none; } }

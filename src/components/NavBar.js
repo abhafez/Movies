@@ -32,6 +32,8 @@ class NavBar extends React.Component {
   }
 
   render() {
+    const { user } = this.props;
+
     return (
       <nav className="navbar navbar-expand-lg navbar-light greeny">
         <Link className="navbar-brand" to="/">
@@ -74,18 +76,22 @@ class NavBar extends React.Component {
           </ul>
           {/* <div className="form-inline my-2 my-lg-0"> */}
           {/* <Route path="/signin" render={({ history }) => <div>Hello</div>} /> */}
-          <ul className="navbar-nav ml-auto">
-            <li>
-              <Link to="/signin" className="nav-link signin">
-                Sign In
-              </Link>
-            </li>
-            <li>
-              <Link to="/signup" className="nav-link signup">
-                Sign Up
-              </Link>
-            </li>
-          </ul>
+          {user === null ? (
+            <ul className="navbar-nav ml-auto">
+              <li>
+                <Link to="/signin" className="nav-link signin">
+                  Sign In
+                </Link>
+              </li>
+              <li>
+                <Link to="/signup" className="nav-link signup">
+                  Sign Up
+                </Link>
+              </li>
+            </ul>
+          ) : (
+            <div id="welcome-msg">Hello {user}</div>
+          )}
         </div>
         {/* </div> */}
       </nav>
