@@ -1,4 +1,36 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat|Staatliches");
+@import url("https://fonts.googleapis.com/css?family=Anton|Lilita+One|Montserrat:400,800");
 #logo {
   font-family: "Montserrat", sans-serif;
   color: #21b2a6; }
+
+.search-section {
+  padding: 1em 0;
+  background: #233142; }
+
+.l-mr {
+  margin-right: 0.25em; }
+
+.greeny {
+  background-color: #21b2a6; }
+
+ul li .signup {
+  color: #233142;
+  background-color: #fbb13c;
+  border-radius: 6px; }
+
+ul li .signin {
+  margin-right: 1em; }
+
+nav #logo {
+  color: #233142;
+  font-family: "Lilita One", cursive;
+  display: inline-block; }
+
+li .nav-link {
+  font-size: 1.25em; }
+  @media screen and (max-width: 992px) {
+    li .nav-link {
+      text-align: center; } }
+
+li:first-of-type {
+  margin-left: 2em; }

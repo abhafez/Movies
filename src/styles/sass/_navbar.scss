@@ -1,0 +1,33 @@
+ul {
+  li {
+    .signup {
+      color: $darker;
+      background-color: $yellow-orange;
+      border-radius: 6px;
+    }
+
+    .signin {
+      margin-right: 1em;
+    }
+  }
+}
+
+nav {
+  #logo {
+    color: $darker;
+    font-family: $head-font;
+    display: inline-block;
+  }
+}
+
+li {
+  .nav-link {
+    font-size: 1.25em;
+    @media screen and (max-width: 992px) {
+      text-align: center;
+    }
+  }
+  &:first-of-type {
+    margin-left: 2em;
+  }
+}
