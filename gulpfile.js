@@ -1,10 +1,10 @@
-var gulp          = require('gulp');
-var sass          = require('gulp-sass');
-var autoprefixer  = require('gulp-autoprefixer');
-var concat        = require('gulp-concat');
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
 
 gulp.task('default', ['sass'], function () {
- gulp.watch('src/styles/**/*.scss', ['sass']);
+  gulp.watch('src/styles/**/*.scss', ['sass']);
 });
 
 
@@ -15,6 +15,6 @@ gulp.task('sass', function () {
     .pipe(autoprefixer({
       browsers: ['last 2 versions']
     }))
-    .pipe(concat('styles.css'))
+    .pipe(concat('App.css'))
     .pipe(gulp.dest('src/styles'))
 });

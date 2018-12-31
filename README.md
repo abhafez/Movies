@@ -63,6 +63,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ad
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
+### Development
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  In this project Sass preprocessor css is used. To compile use one of two available methods.
+  ##### Using gulp
+  `gulp sass` to compile once adding prefixes.
+  `gulp`      to compile and watch changes in sass files.
+  ##### Using npm scripts
+  `build-css` to compile once.
+  `watch-css` to compile and watch changes in sass files.

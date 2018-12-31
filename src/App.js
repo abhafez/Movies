@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Route } from 'react-router-dom'
 import logo from './assets/images/logo.svg';
 import * as MoviesAPI from './MoviesAPI';
-import './App.css';
+import './styles/App.css';
 
 
-class App extends Component {
+class App extends React.Component {
   state = {
     movie: [],
   }
@@ -20,23 +21,17 @@ class App extends Component {
 
   render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={ logo } className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Route exact path='/' render={ () => (
+          <div className="container">
+            <header className="App-header">
+              <img src={ logo } className="App-logo" alt="logo" />
+              <h1 id='logo'>MyMovies</h1>
+            </header>
+          </div>
+        ) } />
       </div>
-    );
+    )
   }
 }
 
