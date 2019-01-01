@@ -1,7 +1,9 @@
-import React, { Component } from "react";
+import React from 'react'
 
-export default class DarkContainer extends Component {
+class DarkContainer extends React.Component {
   render() {
-    return <section className='section-dark' />;
+    return <section className="section-dark" />
   }
 }
+
+export default DarkContainer

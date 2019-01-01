@@ -7,17 +7,21 @@
 
 .metadata {
   font-size: 16px;
+  text-transform: capitalize;
   i,
   p {
     float: left;
   }
   p {
     margin-top: 0;
-    margin-left: 10px;
+    // margin-left: 10px;
+    // margin-right: 10px;
   }
   i {
-    margin-top: 5px;
+    font-style: none;
+    margin-bottom: 15px;
     margin-left: 1px;
+    margin-right: 1px;
   }
 }
 

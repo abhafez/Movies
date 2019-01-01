@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom'
 import firebase from './Firebase'
 import * as MoviesAPI from './MoviesAPI'
 
-import SearchComponent from './components/SearchComponent'
+import Search from './components/Search'
 import NavBar from './components/NavBar'
 import SignIn from './components/Signin'
 import SignUp from './components/Signup'
@@ -23,7 +23,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const random = [500, 600, 700]
+    const random = [206, 307, 101]
+    // todo: randomize
     const randomMovie = []
     random.map(id =>
       MoviesAPI.getMovie(id)
@@ -47,7 +48,7 @@ class App extends React.Component {
     return (
       <div>
         <NavBar user={this.state.user} />
-        <Route path="/search" render={({ history }) => <SearchComponent />} />
+        <Route path="/search" render={({ history }) => <Search />} />
         <Route
           exact
           path="/"

@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import FormWarning from './FormWarning'
 import firebase from '../Firebase'
 
-class SignUp extends Component {
+class SignUp extends React.Component {
   constructor(props) {
     super(props)
     this.state = {

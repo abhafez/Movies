@@ -1,14 +1,16 @@
-import React, { Component } from 'react'
-import firebase from '../Firebase'
+import React from 'react'
 import FormWarning from './FormWarning'
+import firebase from '../Firebase'
+import { Redirect } from 'react-router-dom'
 
-class SignIn extends Component {
+class SignIn extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       email: '',
       password: '',
-      errorMessage: null
+      errorMessage: null,
+      redirectToReferrer: false
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -36,18 +38,21 @@ class SignIn extends Component {
         registrationInfo.password
       )
       .then(() => {
-        // todo: Navigate away
+        this.setState(() => ({
+          redirectToReferrer: true
+        }))
       })
       .catch(error => {
-        if (error.message !== null) {
-          this.setState({ errorMessage: error.message })
-        } else {
-          this.setState({ errorMessage: null })
-        }
+        error.message !== null
+          ? this.setState({ errorMessage: error.message })
+          : this.setState({ errorMessage: null })
       })
   }
 
   render() {
+    if (this.state.redirectToReferrer === true) {
+      return <Redirect to="/" />
+    }
     return (
       <form className="mt-3" onSubmit={this.handleSubmit}>
         <div className="container">
