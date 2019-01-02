@@ -811,32 +811,22 @@ footer {
   padding-bottom: 5rem;
   color: rgba(255, 255, 255, 0.4);
   position: relative; }
+  .s-footer a {
+    color: #ffffff; }
+    .s-footer a:hover, .s-footer a:focus {
+      color: #21b2a6; }
+  .s-footer .display-2 {
+    color: #21b2a6;
+    margin-bottom: 1.6rem; }
+  .s-footer p.lead {
+    color: rgba(255, 255, 255, 0.3); }
+  .s-footer .footer__top [class*="col-"]:first-child {
+    padding-right: 10px; }
+  .s-footer .footer__bottom {
+    margin-top: 3.8rem;
+    padding-top: 1.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.03); }
 
-.s-footer a {
-  color: #ffffff; }
-
-.s-footer a:hover,
-.s-footer a:focus {
-  color: #21b2a6; }
-
-.s-footer .display-2 {
-  color: #21b2a6;
-  margin-bottom: 1.6rem; }
-
-.s-footer p.lead {
-  color: rgba(255, 255, 255, 0.3); }
-
-.footer__top [class*="col-"]:first-child {
-  padding-right: 60px; }
-
-.footer__bottom {
-  margin-top: 3.8rem;
-  padding-top: 1.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.03); }
-
-/* -------------------------------------------------------------------
- * ## subscribe form
- * ------------------------------------------------------------------- */
 .search__form .input__form {
   margin: 2rem 0 0 0;
   padding: 0;
@@ -891,56 +881,6 @@ footer {
     padding-right: 6px; }
 
 /* -------------------------------------------------------------------
- * ## footer__logo
- * ------------------------------------------------------------------- */
-.footer__logo {
-  display: inline-block;
-  margin-bottom: 2.4rem;
-  padding: 0; }
-
-.footer__logo a {
-  display: inline-block;
-  margin-top: 2px;
-  padding: 0;
-  outline: 0;
-  border: none; }
-
-.footer__logo img {
-  width: 135px;
-  height: 15px; }
-
-/* -------------------------------------------------------------------
- * ## footer social
- * ------------------------------------------------------------------- */
-.footer__social {
-  list-style: none;
-  margin: -0.8rem 0 0 0; }
-
-.footer__social li {
-  display: inline-block;
-  font-size: 16px;
-  padding: 0;
-  margin-right: 4px; }
-
-.footer__social li a {
-  display: block;
-  line-height: 40px;
-  height: 40px;
-  width: 40px;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.03);
-  color: #ffffff;
-  border-radius: 50%; }
-
-.footer__social li a:hover,
-.footer__social li a:focus {
-  background-color: #21b2a6;
-  color: #ffffff; }
-
-.footer__social li:last-child {
-  margin-right: 0; }
-
-/* -------------------------------------------------------------------
  * ## footer site links
  * -------------------------------------------------------------------*/
 .footer__site-links {
@@ -972,17 +912,12 @@ footer {
  * ## footer contact
  * ------------------------------------------------------------------- */
 .footer__contact {
-  margin-top: 6.4rem; }
-
-.footer__contact .footer__mail-link {
-  font-weight: 600;
-  font-size: 2.2rem;
-  line-height: 1.455;
-  color: #21b2a6; }
-
-.footer__contact .footer__mail-link:hover,
-.footer__contact .footer__mail-link:focus {
-  color: #ffffff; }
+  margin-top: 1.4rem; }
+  .footer__contact .footer__mail-link {
+    font-weight: 600;
+    font-size: 2.2rem;
+    line-height: 1.455;
+    color: #21b2a6; }
 
 .go-top {
   z-index: 999;
@@ -1019,12 +954,6 @@ footer {
 .go-top a:visited:hover,
 .go-top a:visited:focus {
   background-color: #00a650; }
-
-.go-top.link-is-visible {
-  opacity: 1;
-  visibility: visible;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0); }
 
 #MovieCard .card-header,
 #MovieCard .metadata {
@@ -1080,3 +1009,96 @@ footer {
   overflow: hidden;
   -webkit-transform: scale(0.8);
           transform: scale(0.8); }
+
+main#movie-details .home_banner_area {
+  z-index: 1; }
+  main#movie-details .home_banner_area .box_1620 {
+    min-height: 700px;
+    border-radius: 12px;
+    bottom: -200px;
+    -webkit-box-shadow: 0px 0px 80px 0px rgba(153, 153, 153, 0.3);
+            box-shadow: 0px 0px 80px 0px rgba(153, 153, 153, 0.3); }
+  main#movie-details .home_banner_area .banner_inner {
+    position: relative;
+    width: 100%;
+    min-height: 37.5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    main#movie-details .home_banner_area .banner_inner .banner_content {
+      vertical-align: top;
+      -ms-flex-item-align: center;
+          align-self: center;
+      text-align: left; }
+      main#movie-details .home_banner_area .banner_inner .banner_content .media .d-flex {
+        padding-right: 125px; }
+      main#movie-details .home_banner_area .banner_inner .banner_content .media .media-body {
+        vertical-align: top;
+        -ms-flex-item-align: center;
+            align-self: center; }
+
+main#movie-details .blog_banner {
+  min-height: 780px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin-bottom: 0px; }
+  main#movie-details .blog_banner .banner_inner {
+    background: #04091e;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 780px;
+    z-index: 1; }
+    main#movie-details .blog_banner .banner_inner .overlay {
+      opacity: 0.5;
+      height: 125%;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      z-index: -1; }
+    main#movie-details .blog_banner .banner_inner .blog_b_text {
+      max-width: 700px;
+      margin: auto;
+      color: #fff; }
+      main#movie-details .blog_banner .banner_inner .blog_b_text h2 {
+        font-size: 60px;
+        font-weight: bold;
+        line-height: 66px;
+        margin-bottom: 15px;
+        text-transform: uppercase; }
+      main#movie-details .blog_banner .banner_inner .blog_b_text p {
+        font-size: 16px;
+        margin-bottom: 35px; }
+      main#movie-details .blog_banner .banner_inner .blog_b_text .white_bg_btn {
+        line-height: 42px;
+        padding: 0px 45px;
+        border-radius: 5px; }
+
+main#movie-details .banner_box {
+  max-width: 1620px;
+  margin: auto; }
+
+main#movie-details .banner_area {
+  position: relative;
+  z-index: 1;
+  min-height: 350px;
+  margin-bottom: 120px; }
+  main#movie-details .banner_area .box_1620 {
+    min-height: 360px;
+    border-radius: 12px;
+    position: relative;
+    bottom: -120px;
+    -webkit-box-shadow: 0px 20px 80px 0px rgba(153, 153, 153, 0.3);
+            box-shadow: 0px 20px 80px 0px rgba(153, 153, 153, 0.3); }
+  main#movie-details .banner_area .banner_inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 360px;
+    z-index: 1; }
+    main#movie-details .banner_area .banner_inner .banner_content h2 {
+      font-size: 48px;
+      margin-bottom: 0px;
+      font-weight: bold; }

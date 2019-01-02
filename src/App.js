@@ -10,8 +10,10 @@ import SignIn from './components/Signin'
 import SignUp from './components/Signup'
 import Footer from './components/Footer'
 import Poster from './components/Poster'
-import './styles/App.css'
 import MovieCard from './components/MovieCard'
+import MovieDetails from './components/MovieDetails'
+import './styles/App.css'
+import FoundMovies from './components/FoundMovies'
 
 class App extends React.Component {
   constructor() {
@@ -20,7 +22,9 @@ class App extends React.Component {
       user: null,
       randomMovies: [],
       displayName: null,
-      userID: null
+      userID: null,
+      searchResults: [],
+      movieToDisplay: null
     }
     this.handleUserSignin = this.handleUserSignin.bind(this)
   }
@@ -44,11 +48,6 @@ class App extends React.Component {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         console.log(user)
-        // this.setState({
-        //   user: user,
-        //   displayName: user.displayName,
-        //   userID: user.uid
-        // })
       } else {
         this.setState({ user: null })
       }
@@ -65,7 +64,15 @@ class App extends React.Component {
     return (
       <div>
         <NavBar user={this.state.user} />
-        <Route path="/search" render={({ history }) => <Search />} />
+        <Route
+          path="/search"
+          render={({ history }) => (
+            <div>
+              <Search />
+              <FoundMovies searchResults={this.state.searchResults} />
+            </div>
+          )}
+        />
         <Route
           exact
           path="/"
@@ -79,6 +86,7 @@ class App extends React.Component {
             </div>
           )}
         />
+        {this.state.movieToDisplay ? <MovieDetails /> : <div />}
         <Route
           path="/signin"
           render={({ history }) => (
@@ -86,7 +94,7 @@ class App extends React.Component {
           )}
         />
         <Route path="/signup" render={({ history }) => <SignUp />} />
-        <Poster />
+        {this.state.searchResults.length > 0 ? <Poster /> : <div />}
         <Footer />
       </div>
     )

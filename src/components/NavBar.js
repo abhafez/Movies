@@ -54,6 +54,7 @@ class NavBar extends React.Component {
             className="navbar-toggler-icon"
             onClick={this.hideShowMenu}
             onKeyPress={this.hideShowMenu}
+            onBlur={this.hideShowMenu}
           />
         </button>
 
