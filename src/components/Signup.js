@@ -44,8 +44,12 @@ class SignUp extends React.Component {
         registrationInfo.email,
         registrationInfo.password
       )
-      .then(() => {
-        this.props.registerUser(registrationInfo.displayName)
+      .then(user => {
+        if (user) {
+          user.updateProfile({
+            displayName: registrationInfo.displayName
+          })
+        }
       })
       .catch(error => {
         if (error.message !== null) {

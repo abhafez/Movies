@@ -757,13 +757,16 @@ textarea {
   font-family: "Montserrat", sans-serif;
   color: #21b2a6; }
 
-ul li .signup {
-  color: #233142;
-  background-color: #fbb13c;
-  border-radius: 6px; }
-
-ul li .signin {
-  margin-right: 1em; }
+ul li {
+  font-size: 1.5em; }
+  ul li .signup {
+    color: #233142;
+    background-color: white;
+    border-radius: 6px;
+    padding: 15px; }
+  ul li .signin {
+    padding: 15px;
+    margin-right: 1em; }
 
 nav #logo {
   color: #233142;
@@ -841,7 +844,7 @@ footer {
 
 .search__form #sm-form {
   width: 100%; }
-  .search__form #sm-form input[type="text"] {
+  .search__form #sm-form input[type="search"] {
     width: 100%;
     height: 6.4rem;
     font-size: 1.8rem;

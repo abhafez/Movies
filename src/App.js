@@ -18,8 +18,11 @@ class App extends React.Component {
     super()
     this.state = {
       user: null,
-      randomMovies: []
+      randomMovies: [],
+      displayName: null,
+      userID: null
     }
+    this.handleUserSignin = this.handleUserSignin.bind(this)
   }
 
   componentDidMount() {
@@ -37,11 +40,25 @@ class App extends React.Component {
           })
         })
     )
-    // const ref = firebase.database().ref('user')
-    // ref.on('value', snapshot => {
-    //   let FBUser = snapshot.val()
-    //   this.setState({ user: FBUser })
-    // })
+
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        console.log(user)
+        // this.setState({
+        //   user: user,
+        //   displayName: user.displayName,
+        //   userID: user.uid
+        // })
+      } else {
+        this.setState({ user: null })
+      }
+    })
+  }
+
+  handleUserSignin(user) {
+    this.setState({
+      user: user
+    })
   }
 
   render() {
@@ -63,7 +80,12 @@ class App extends React.Component {
           )}
         />
         <Jumbotron />
-        <Route path="/signin" render={({ history }) => <SignIn />} />
+        <Route
+          path="/signin"
+          render={({ history }) => (
+            <SignIn handleUserSignin={this.handleUserSignin} />
+          )}
+        />
         <Route path="/signup" render={({ history }) => <SignUp />} />
         <Footer />
       </div>

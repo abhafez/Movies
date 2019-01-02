@@ -1,12 +1,16 @@
 ul {
   li {
+    font-size: 1.5em;
+
     .signup {
       color: $darker;
-      background-color: $yellow-orange;
+      background-color: lighten($yellow-orange, 40%);
       border-radius: 6px;
+      padding: 15px;
     }
 
     .signin {
+      padding: 15px;
       margin-right: 1em;
     }
   }

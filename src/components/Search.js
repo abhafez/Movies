@@ -1,6 +1,23 @@
 import React from 'react'
 
 class SearchBox extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      query: ''
+    }
+  }
+
+  // Update Search query in the state
+  updateQuery = query => {
+    this.setState({ query: query })
+  }
+
+  // On search cancel
+  clearQuery = () => {
+    this.setState({ query: '' })
+  }
+
   render() {
     return (
       <section class="section-dark">
@@ -13,9 +30,13 @@ class SearchBox extends React.Component {
               <div class="input__form">
                 <form id="sm-form" action="#" class="d-flex">
                   <input
-                    type="text"
+                    type="search"
+                    role="searchbox"
                     class="form-control "
                     placeholder="Find your movie..."
+                    onChange={event => {
+                      this.updateQuery(event.target.value)
+                    }}
                   />
                   <input
                     type="submit"
