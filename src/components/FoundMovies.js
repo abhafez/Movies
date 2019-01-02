@@ -1,5 +1,4 @@
 import React from 'react'
-import MovieCard from './MovieCard'
 
 class FoundMovies extends React.Component {
   constructor(props) {
@@ -9,13 +8,16 @@ class FoundMovies extends React.Component {
   }
 
   render() {
-    return this.props.searchResults.map(movie => (
+    return (
       <div classNameName="container">
         <div className="row">
-          <MovieCard movie={movie} />
+          {this.props.searchResults.map(movie =>
+            // <MovieCard key={movie.id} movie={movie} />
+            console.log(movie)
+          )}
         </div>
       </div>
-    ))
+    )
   }
 }
 

@@ -58,7 +58,6 @@ class Footer extends React.Component {
             </div>
           </div>
         </div>
-          {/* accessibility go to top */}
         <div className="go-top">
           <a className="smoothscroll" title="Back to Top" href="#top">
             Top

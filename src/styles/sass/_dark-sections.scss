@@ -46,10 +46,10 @@ footer {
   }
 
   .footer__bottom {
-  margin-top: 3.8rem;
-  padding-top: 1.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
-}
+    margin-top: 3.8rem;
+    padding-top: 1.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+  }
 }
 
 .search__form {
@@ -85,7 +85,7 @@ footer {
       opacity: 1;
     }
 
-    input[type="submit"] {
+    button[type="submit"] {
       color: #ffffff;
       background: $cool-green;
       border-color: $cool-green;
@@ -111,7 +111,6 @@ footer {
     }
   }
 }
-
 
 /* -------------------------------------------------------------------
  * ## footer site links
@@ -154,10 +153,10 @@ footer {
   margin-top: 1.4rem;
 
   .footer__mail-link {
-  font-weight: 600;
-  font-size: 2.2rem;
-  line-height: 1.455;
-  color: $cool-green;
+    font-weight: 600;
+    font-size: 2.2rem;
+    line-height: 1.455;
+    color: $cool-green;
   }
 }
 

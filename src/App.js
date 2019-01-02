@@ -10,11 +10,11 @@ import SignIn from './components/Signin'
 import SignUp from './components/Signup'
 import Footer from './components/Footer'
 import Poster from './components/Poster'
-import MovieCard from './components/MovieCard'
+import MovieCard from './components/MovieCardByMovieName'
 import MovieDetails from './components/MovieDetails'
-import './styles/App.css'
 import FoundMovies from './components/FoundMovies'
 
+import './styles/App.css'
 class App extends React.Component {
   constructor() {
     super()
@@ -24,9 +24,11 @@ class App extends React.Component {
       displayName: null,
       userID: null,
       searchResults: [],
-      movieToDisplay: null
+      movieToDisplayId: null,
+      userFavList: []
     }
     this.handleUserSignin = this.handleUserSignin.bind(this)
+    this.onSearchResult = this.onSearchResult.bind(this)
   }
 
   componentDidMount() {
@@ -60,6 +62,14 @@ class App extends React.Component {
     })
   }
 
+  onSearchResult(matchMovies) {
+    if (matchMovies) {
+      this.setState({
+        searchResults: matchMovies
+      })
+    }
+  }
+
   render() {
     return (
       <div>
@@ -68,7 +78,7 @@ class App extends React.Component {
           path="/search"
           render={({ history }) => (
             <div>
-              <Search />
+              <Search onSearchResult={this.onSearchResult} />
               <FoundMovies searchResults={this.state.searchResults} />
             </div>
           )}
@@ -86,7 +96,7 @@ class App extends React.Component {
             </div>
           )}
         />
-        {this.state.movieToDisplay ? <MovieDetails /> : <div />}
+        {this.state.movieToDisplayId ? <MovieDetails /> : <div />}
         <Route
           path="/signin"
           render={({ history }) => (
@@ -94,7 +104,7 @@ class App extends React.Component {
           )}
         />
         <Route path="/signup" render={({ history }) => <SignUp />} />
-        {this.state.searchResults.length > 0 ? <Poster /> : <div />}
+        <Poster />
         <Footer />
       </div>
     )

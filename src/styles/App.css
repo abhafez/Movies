@@ -860,7 +860,7 @@ footer {
   .search__form #sm-form ::placeholder {
     color: #21b2a6;
     opacity: 1; }
-  .search__form #sm-form input[type="submit"] {
+  .search__form #sm-form button[type="submit"] {
     color: #ffffff;
     background: #21b2a6;
     border-color: #21b2a6;
