@@ -1,52 +1,52 @@
-.card-header,
-.metadata {
+#MovieCard .card-header,
+#MovieCard .metadata {
   background: none;
   padding: 0;
   border-style: none; }
 
-.metadata {
+#MovieCard .metadata {
   font-size: 16px;
   text-transform: capitalize; }
-  .metadata i,
-  .metadata p {
+  #MovieCard .metadata i,
+  #MovieCard .metadata p {
     float: left; }
-  .metadata p {
+  #MovieCard .metadata p {
     margin-top: 0; }
-  .metadata i {
+  #MovieCard .metadata i {
     font-style: none;
     margin-bottom: 15px;
     margin-left: 1px;
     margin-right: 1px; }
 
-.card-img {
+#MovieCard .card-img {
   -webkit-clip-path: inset(10% 0 20% 0);
   clip-path: inset(10% 0 20% 0);
   margin-top: -15%; }
 
-.card-body {
+#MovieCard .card-body {
   color: #9fa7a9; }
-  .card-body .card-title {
+  #MovieCard .card-body .card-title {
     font-size: 3em;
     font-weight: 600;
     color: #414345; }
-  .card-body .card-text {
+  #MovieCard .card-body .card-text {
     font-weight: 600;
     font-size: 2em;
     line-height: 30px; }
 
-.card {
+#MovieCard .card {
   width: 375px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-  .card:hover {
+  #MovieCard .card:hover {
     -webkit-box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.18);
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.18); }
 
 @media only screen and (max-width: 600px) {
-  .row {
+  #MovieCard .row {
     padding-left: 0; } }
 
-.card {
+#MovieCard .card {
   border-radius: 8pt;
   border-style: none;
   overflow: hidden;
@@ -1026,55 +1026,55 @@ footer {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
-.card-header,
-.metadata {
+#MovieCard .card-header,
+#MovieCard .metadata {
   background: none;
   padding: 0;
   border-style: none; }
 
-.metadata {
+#MovieCard .metadata {
   font-size: 16px;
   text-transform: capitalize; }
-  .metadata i,
-  .metadata p {
+  #MovieCard .metadata i,
+  #MovieCard .metadata p {
     float: left; }
-  .metadata p {
+  #MovieCard .metadata p {
     margin-top: 0; }
-  .metadata i {
+  #MovieCard .metadata i {
     font-style: none;
     margin-bottom: 15px;
     margin-left: 1px;
     margin-right: 1px; }
 
-.card-img {
+#MovieCard .card-img {
   -webkit-clip-path: inset(10% 0 20% 0);
   clip-path: inset(10% 0 20% 0);
   margin-top: -15%; }
 
-.card-body {
+#MovieCard .card-body {
   color: #9fa7a9; }
-  .card-body .card-title {
+  #MovieCard .card-body .card-title {
     font-size: 3em;
     font-weight: 600;
     color: #414345; }
-  .card-body .card-text {
+  #MovieCard .card-body .card-text {
     font-weight: 600;
     font-size: 2em;
     line-height: 30px; }
 
-.card {
+#MovieCard .card {
   width: 375px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-  .card:hover {
+  #MovieCard .card:hover {
     -webkit-box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.18);
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.18); }
 
 @media only screen and (max-width: 600px) {
-  .row {
+  #MovieCard .row {
     padding-left: 0; } }
 
-.card {
+#MovieCard .card {
   border-radius: 8pt;
   border-style: none;
   overflow: hidden;

@@ -9,7 +9,7 @@ import NavBar from './components/NavBar'
 import SignIn from './components/Signin'
 import SignUp from './components/Signup'
 import Footer from './components/Footer'
-import Jumbotron from './components/Jumbotron'
+import Poster from './components/Poster'
 import './styles/App.css'
 import MovieCard from './components/MovieCard'
 
@@ -79,7 +79,6 @@ class App extends React.Component {
             </div>
           )}
         />
-        <Jumbotron />
         <Route
           path="/signin"
           render={({ history }) => (
@@ -87,6 +86,7 @@ class App extends React.Component {
           )}
         />
         <Route path="/signup" render={({ history }) => <SignUp />} />
+        <Poster />
         <Footer />
       </div>
     )

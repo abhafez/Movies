@@ -16,7 +16,7 @@ class MovieCard extends React.Component {
       genres
     } = this.props.movie
     return (
-      <div className="col-lg-4 col-sm-2">
+      <div id="MovieCard" className="col-lg-4 col-sm-2">
         <div className="card">
           <div className="card-header">
             <img

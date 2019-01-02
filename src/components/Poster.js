@@ -28,7 +28,8 @@ class poster extends React.Component {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       height: '600px',
-      maxHeight: '600px'
+      maxHeight: '600px',
+      marginTop: '2.5em'
     }
 
     const smallScreen = {
@@ -37,7 +38,8 @@ class poster extends React.Component {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       height: '600px',
-      maxHeight: '600px'
+      maxHeight: '600px',
+      marginTop: '2.5em'
     }
 
     // warning: it works well with different devices. but while switching mode in developer tools
