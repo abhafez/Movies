@@ -1,13 +1,14 @@
 import React from 'react'
 import { searchMovie } from '../MoviesAPI'
-import MovieCardByMovieName from './MovieCardByMovieName'
+import MovieCard from './MovieCard'
 
 class SearchBox extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       query: '',
-      moviesFound: null
+      moviesFound: null,
+      searchMessage: 'Find Your Movie'
     }
     this.findMovies = this.findMovies.bind(this)
   }
@@ -29,10 +30,26 @@ class SearchBox extends React.Component {
   }
 
   findMovies(e) {
+    e.preventDefault()
     searchMovie(this.state.query).then(res => {
-      // console.log(res.results)
-      this.setState({ moviesFound: res.results })
-      this.props.onSearchResult(this.state.moviesFound)
+      this.setState({
+        moviesFound: res.results
+      })
+      if (
+        this.state.moviesFound !== null &&
+        this.state.moviesFound.length === 0
+      ) {
+        this.setState({
+          searchMessage: 'No movies match this name'
+          // moviesFound: null
+        })
+      } else {
+        this.setState({
+          moviesFound: res.results,
+          searchMessage: 'Find Your Movie'
+        })
+        this.props.onSearchResult(this.state.moviesFound)
+      }
     })
   }
 
@@ -43,7 +60,7 @@ class SearchBox extends React.Component {
           <div class="container">
             <div class="row d-flex">
               <div class="col-lg-5 heading-white mb-4 mb-sm-4 mb-lg-0 text-light">
-                <h1 className="display-2">Find Your Movie</h1>
+                <h1 className="display-2">{this.state.searchMessage}</h1>
               </div>
               <div class="col-lg-7 ftco-wrap search__form">
                 <div class="input__form">
@@ -72,9 +89,7 @@ class SearchBox extends React.Component {
         </section>
         <section>
           {this.state.moviesFound ? (
-            this.state.moviesFound.map(movie => (
-              <MovieCardByMovieName movie={movie} />
-            ))
+            this.state.moviesFound.map(movie => <MovieCard movie={movie} />)
           ) : (
             <div />
           )}

@@ -12,9 +12,9 @@ class MovieCard extends React.Component {
       vote_average,
       original_title,
       overview,
-      poster_path,
-      genres
+      poster_path
     } = this.props.movie
+
     return (
       <div id="MovieCard" className="col-lg-4 col-sm-2">
         <div className="card">
@@ -32,20 +32,6 @@ class MovieCard extends React.Component {
                 <div className="col-4 metadata">
                   <p>{vote_average}/10</p>
                 </div>
-                {/* <div className="col-8 metadata"> */}
-                {genres.map(genre => {
-                  return (
-                    <div className="metadata" key={genre.id} data={genre.name}>
-                      <i>
-                        {genre.name}
-                        {genre === genres[genres.length - 1] ? '' : ' - '}
-                        {/* To Separate genres by dashes and prevent dash for last item */}
-                        {/* todo: enhance UI font sizes */}
-                      </i>
-                    </div>
-                  )
-                })}
-                {/* </div> */}
               </div>
             </div>
             <p className="card-text">{overview}</p>

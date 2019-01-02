@@ -10,7 +10,7 @@ import SignIn from './components/Signin'
 import SignUp from './components/Signup'
 import Footer from './components/Footer'
 import Poster from './components/Poster'
-import MovieCard from './components/MovieCardByMovieName'
+import MovieCard from './components/MovieCard'
 import MovieDetails from './components/MovieDetails'
 import FoundMovies from './components/FoundMovies'
 
