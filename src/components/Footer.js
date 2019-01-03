@@ -7,7 +7,6 @@ class Footer extends React.Component {
         <div className="row footer__top">
           <div className="col-six md-full">
             <h1 className="display-2">Let's Stay In Touch.</h1>
-            <p className="lead" />
           </div>
         </div>
 
@@ -22,24 +21,6 @@ class Footer extends React.Component {
           </div> */}
 
           <div className="col-six tab-full end">
-            <ul className="footer__site-links">
-              <li>
-                <a className="smoothscroll" href="#home" title="intro">
-                  Intro
-                </a>
-              </li>
-              <li>
-                <a className="smoothscroll" href="#about" title="about">
-                  About
-                </a>
-              </li>
-              <li>
-                <a className="smoothscroll" href="#features" title="features">
-                  Features
-                </a>
-              </li>
-            </ul>
-
             <p className="footer__contact">
               Did you like this Single Page App? Send me a word: <br />
               <a href="mailto:#0" className="footer__mail-link">

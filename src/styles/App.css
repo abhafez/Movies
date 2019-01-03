@@ -1031,7 +1031,7 @@ main#movie-details .home_banner_area {
           align-self: center;
       text-align: left; }
       main#movie-details .home_banner_area .banner_inner .banner_content .media .d-flex {
-        padding-right: 125px; }
+        padding-right: 25px; }
       main#movie-details .home_banner_area .banner_inner .banner_content .media .media-body {
         vertical-align: top;
         -ms-flex-item-align: center;
@@ -1062,7 +1062,7 @@ main#movie-details .blog_banner {
       max-width: 700px;
       margin: auto;
       color: #fff; }
-      main#movie-details .blog_banner .banner_inner .blog_b_text h2 {
+      main#movie-details .blog_banner .banner_inner .blog_b_text h1 {
         font-size: 60px;
         font-weight: bold;
         line-height: 66px;
@@ -1098,7 +1098,7 @@ main#movie-details .banner_area {
     width: 100%;
     min-height: 360px;
     z-index: 1; }
-    main#movie-details .banner_area .banner_inner .banner_content h2 {
+    main#movie-details .banner_area .banner_inner .banner_content h1 {
       font-size: 48px;
       margin-bottom: 0px;
       font-weight: bold; }

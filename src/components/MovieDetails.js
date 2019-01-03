@@ -12,11 +12,7 @@ class MovieDetails extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.setState({
-      id: this.props.match.params.id
-    })
-
+  componentWillMount() {
     getMovie(this.props.match.params.id)
       .then(movie => {
         this.setState({
@@ -29,53 +25,48 @@ class MovieDetails extends React.Component {
           warningMessage: 'Something Went Wrong'
         })
       })
+
+    this.setState({
+      id: this.props.match.params.id
+    })
   }
 
+  componentDidMount() {}
+
   render() {
-    return (
+    return this.state.currentMovie === null ? (
+      // todo: make some fancy loading circle.
+      <div className="loading" />
+    ) : (
       <main id="movie-details">
-        <section class="home_banner_area">
-          <div class="container box_1620">
-            <div class="banner_inner d-flex align-items-center">
-              <div class="banner_content">
-                <div class="media">
-                  <div class="d-flex">
-                    <img src="img/personal.jpg" alt="Hello" />
+        <section className="home_banner_area">
+          <div className="container box_1620">
+            <div className="banner_inner d-flex align-items-center">
+              <div className="banner_content">
+                <div className="media">
+                  <div className="d-flex">
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500/${
+                        this.state.currentMovie.poster_path
+                      }`}
+                      alt={this.state.currentMovie.original_title}
+                    />
                   </div>
-                  <div class="media-body">
-                    <div class="personal_text">
-                      <h6>Hello Everybody, i am</h6>
-                      <h3>Donald McKinney</h3>
-                      <h4>Junior UI/UX Developer</h4>
+                  <div className="media-body">
+                    <div className="">
+                      <h1 className="display-3">
+                        {this.state.currentMovie.original_title}
+                      </h1>
                       <p>
-                        You will begin to realise why this exercise is called
-                        the Dickens Pattern (with reference to the ghost showing
-                        Scrooge some different futures)
+                        <span>Release Date: </span>
+                        {this.state.currentMovie.release_date}
                       </p>
-                      <ul class="list basic_info">
-                        <li>
-                          <a href="#">
-                            <i class="lnr lnr-calendar-full" /> 31st December,
-                            1992
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="lnr lnr-phone-handset" /> 44 (012) 6954
-                            783
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="lnr lnr-envelope" /> businessplan@donald
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="lnr lnr-home" /> Santa monica bullevard
-                          </a>
-                        </li>
-                      </ul>
+                      <p>
+                        <span>Rate: </span>
+                        {this.state.currentMovie.vote_average}/10
+                      </p>
+                      <br />
+                      <p>{this.state.currentMovie.overview}</p>
                     </div>
                   </div>
                 </div>
