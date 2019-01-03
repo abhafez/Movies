@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class MovieCard extends React.Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class MovieCard extends React.Component {
       vote_average,
       original_title,
       overview,
-      poster_path
+      poster_path,
+      id
     } = this.props.movie
 
     return (
@@ -26,7 +28,10 @@ class MovieCard extends React.Component {
             />
           </div>
           <div className="card-body">
-            <h1 className="card-title">{original_title}</h1>
+            <Link to={`/movies/${id}`}>
+              <h1 className="card-title">{original_title}</h1>
+            </Link>
+
             <div className="container">
               <div className="row">
                 <div className="col-4 metadata">

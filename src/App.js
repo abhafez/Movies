@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import firebase from './Firebase'
 import * as MoviesAPI from './MoviesAPI'
@@ -25,7 +25,8 @@ class App extends React.Component {
       userID: null,
       searchResults: [],
       movieToDisplayId: null,
-      userFavList: []
+      userFavList: [],
+      movie: 205
     }
     this.handleUserSignin = this.handleUserSignin.bind(this)
     this.onSearchResult = this.onSearchResult.bind(this)
@@ -104,6 +105,9 @@ class App extends React.Component {
           )}
         />
         <Route path="/signup" render={({ history }) => <SignUp />} />
+        <Switch>
+          <Route path="/movies/:id" component={MovieDetails} />
+        </Switch>
         <Poster />
         <Footer />
       </div>

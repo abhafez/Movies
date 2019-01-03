@@ -1,19 +1,36 @@
 import React from 'react'
+import { getMovie } from '../MoviesAPI'
 
 class MovieDetails extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      id: null
+      id: null,
+      currentMovie: null,
+      warningMessage: null
     }
   }
 
-  // componentDidMount = () => {
-  //   this.setState({
-  //     // id: this.props.movie.id
-  //   })
-  // }
+  componentDidMount() {
+    this.setState({
+      id: this.props.match.params.id
+    })
+
+    getMovie(this.props.match.params.id)
+      .then(movie => {
+        this.setState({
+          currentMovie: movie
+        })
+      })
+      .catch(e => {
+        console.log(e)
+        this.setState({
+          warningMessage: 'Something Went Wrong'
+        })
+      })
+  }
+
   render() {
     return (
       <main id="movie-details">
