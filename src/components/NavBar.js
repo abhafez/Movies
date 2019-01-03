@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Greeting from './Greeting'
+import { searchByKeyword } from '../MoviesAPI'
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -68,6 +69,11 @@ class NavBar extends React.Component {
             <li className="nav-item">
               <Link className="nav-link" to="/search">
                 Search
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/SearchKeyword">
+                Search By Keyword
               </Link>
             </li>
             <li className="nav-item">

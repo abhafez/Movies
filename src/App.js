@@ -11,8 +11,9 @@ import SignUp from './components/Signup'
 import Footer from './components/Footer'
 import Poster from './components/Poster'
 import MovieCard from './components/MovieCard'
-import MovieDetails from './components/MovieDetails'
 import FoundMovies from './components/FoundMovies'
+import MovieDetails from './components/MovieDetails'
+import SearchKeyword from './components/SearchKeyword'
 
 import './styles/App.css'
 class App extends React.Component {
@@ -80,6 +81,15 @@ class App extends React.Component {
           render={({ history }) => (
             <div>
               <Search onSearchResult={this.onSearchResult} />
+              <FoundMovies searchResults={this.state.searchResults} />
+            </div>
+          )}
+        />
+        <Route
+          path="/SearchKeyword"
+          render={({ history }) => (
+            <div>
+              <SearchKeyword onSearchResult={this.onSearchResult} />
               <FoundMovies searchResults={this.state.searchResults} />
             </div>
           )}

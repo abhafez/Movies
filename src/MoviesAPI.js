@@ -8,7 +8,6 @@ export const getMovie = movieId =>
   fetch(`${urlStart}movie/${movieId}?${apiKey}`)
     .then(res => res.json())
     .then(movie => movie)
-    .catch(e => console.log(e))
 
 // get movie search results
 export const searchMovie = query =>
