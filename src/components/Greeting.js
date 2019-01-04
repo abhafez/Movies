@@ -5,7 +5,7 @@ class Greeting extends React.Component {
   render() {
     const { userName, logOutUser } = this.props
     return (
-      <div>
+      <div className="ml-auto">
         <span>Welcome {userName}</span>,{' '}
         <Link to="/login" onClick={e => logOutUser(e)}>
           Logout

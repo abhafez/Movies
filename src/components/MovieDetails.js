@@ -50,7 +50,7 @@ class MovieDetails extends React.Component {
     ) : (
       <main id="movie-details">
         <section className="home_banner_area">
-          <div className="container box_1620">
+          <div className="box_1620">
             <div className="banner_inner d-flex align-items-center">
               <div className="banner_content">
                 <div className="media">
