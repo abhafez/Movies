@@ -1094,8 +1094,9 @@ span.badge {
 
 .zs-container i {
   text-align: center;
-  margin-top: 5em;
-  display: block; }
+  margin-top: 2em;
+  display: block;
+  font-size: 5em; }
 
 html,
 body {

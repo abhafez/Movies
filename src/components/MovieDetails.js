@@ -21,7 +21,7 @@ class MovieDetails extends React.Component {
           currentMovie: movie
         })
       })
-      .catch(e => {
+      .catch(() => {
         this.setState({
           warningMessage: 'Something Went Wrong'
         })
@@ -51,7 +51,7 @@ class MovieDetails extends React.Component {
       <main id="movie-details" className="movie-details">
         <div className="md-sub">
           <img
-            src={`https://image.tmdb.org/t/p/w200/${currentMovie.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w300/${currentMovie.poster_path}`}
             alt={currentMovie.original_title}
           />
         </div>

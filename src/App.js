@@ -59,7 +59,7 @@ class App extends React.Component {
     })
   }
 
-  handleSignOut(e) {
+  handleSignOut() {
     firebase.auth().signOut()
   }
 
@@ -101,7 +101,7 @@ class App extends React.Component {
           <NavBar user={this.state.user} logOutUser={this.handleSignOut} />
           {/* {user ? <div>favList: {this.state.user.userFavList}</div> : <div />} */}
 
-          <Route path="/search" render={({ history }) => <Redirect to="/" />} />
+          <Route path="/search" render={() => <Redirect to="/" />} />
           <Route
             exact
             path="/"
@@ -114,7 +114,7 @@ class App extends React.Component {
           {movieToDisplayId ? <MovieDetails /> : <div />}
           <Route
             path="/login"
-            render={({ history }) =>
+            render={() =>
               user === null ? (
                 <SignIn handleUserSignin={this.handleUserSignin} />
               ) : (
@@ -122,7 +122,7 @@ class App extends React.Component {
               )
             }
           />
-          <Route path="/signup" render={({ history }) => <SignUp />} />
+          <Route path="/signup" render={() => <SignUp />} />
           <Switch>
             <Route path="/movies/:id" component={MovieDetails} />
           </Switch>

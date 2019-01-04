@@ -10,7 +10,8 @@ class SearchBox extends React.Component {
       query: '',
       moviesFound: [],
       searchMessage: 'Find Your Movie',
-      selectedOption: 'byName'
+      selectedOption: 'byName',
+      userStartedSearch: false
     }
     this.findMoviesByName = this.findMoviesByName.bind(this)
     this.findMoviesByKeyword = this.findMoviesByKeyword.bind(this)
@@ -39,7 +40,8 @@ class SearchBox extends React.Component {
     if (this.state.query.length === 0) return
     searchMovie(this.state.query).then(res => {
       this.setState({
-        moviesFound: res.results
+        moviesFound: res.results,
+        userStartedSearch: true
       })
     })
   }
@@ -58,7 +60,8 @@ class SearchBox extends React.Component {
             })
             .then(() => {
               this.setState({
-                moviesFound: movies
+                moviesFound: movies,
+                userStartedSearch: true
               })
             })
         )
@@ -72,7 +75,7 @@ class SearchBox extends React.Component {
   }
 
   render() {
-    const { moviesFound, selectedOption } = this.state
+    const { moviesFound, selectedOption, userStartedSearch } = this.state
     return (
       <div>
         <section className="section-dark">
@@ -142,7 +145,7 @@ class SearchBox extends React.Component {
           {moviesFound.length > 0 ? (
             moviesFound.map(movie => <MovieCard movie={movie} />)
           ) : moviesFound.length === 0 ? (
-            <ZeroState />
+            <ZeroState message={userStartedSearch} />
           ) : (
             <div />
           )}

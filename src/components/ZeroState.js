@@ -6,10 +6,11 @@ class ZeroState extends React.Component {
   }
 
   render() {
+    const { message } = this.props
     return (
       <div className="zs-container">
-        <i className="fa fa-heart" aria-hidden="true" />
-        <p class="display-2">No search results found</p>
+        <i className="fa fa-film" aria-hidden="true" />
+        <p class="display-2">{message ? 'No search results found' : ''}</p>
       </div>
     )
   }
