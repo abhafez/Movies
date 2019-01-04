@@ -9,10 +9,12 @@ class SearchBox extends React.Component {
     this.state = {
       query: '',
       moviesFound: null,
-      searchMessage: 'Find Your Movie'
+      searchMessage: 'Find Your Movie',
+      selectedOption: 'byName'
     }
     this.findMoviesByName = this.findMoviesByName.bind(this)
     this.findMoviesByKeyword = this.findMoviesByKeyword.bind(this)
+    this.handleOptionChange = this.handleOptionChange.bind(this)
   }
 
   componentDidMount() {
@@ -60,23 +62,29 @@ class SearchBox extends React.Component {
       )
   }
 
+  handleOptionChange(changeEvent) {
+    this.setState({
+      selectedOption: changeEvent.target.value
+    })
+  }
+
   render() {
-    const { moviesFound } = this.state
+    const { moviesFound, selectedOption } = this.state
     return (
       <div>
-        <section class="section-dark">
-          <div class="container">
-            <div class="row d-flex">
-              <div class="col-lg-6 heading-white mb-4 mb-sm-4 mb-lg-0 text-light">
+        <section className="section-dark">
+          <div className="container">
+            <div className="row d-flex">
+              <div className="col-lg-6 heading-white mb-4 mb-sm-4 mb-lg-0 text-light">
                 <h1 className="display-2">{this.state.searchMessage}</h1>
               </div>
-              <div class="col-lg-6 ftco-wrap search__form">
-                <div class="input__form">
-                  <form id="sm-form" action="#" class="d-flex">
+              <div className="col-lg-6 ftco-wrap search__form">
+                <div className="input__form">
+                  <form id="sm-form" action="#" className="d-flex">
                     <input
                       type="search"
                       role="searchbox"
-                      class="form-control "
+                      className="form-control "
                       placeholder="Find your movie..."
                       onChange={event => {
                         this.updateQuery(event.target.value)
@@ -84,10 +92,10 @@ class SearchBox extends React.Component {
                     />
                     <button
                       type="submit"
-                      class="search-domain btn text-center greeny"
+                      className="search-domain btn text-center greeny"
                       value="Search"
                       onClick={event => {
-                        document.getElementById('by-name').checked
+                        selectedOption === 'byName'
                           ? this.findMoviesByName(event)
                           : this.findMoviesByKeyword(event)
                       }}>
@@ -104,8 +112,9 @@ class SearchBox extends React.Component {
                     type="radio"
                     id="by-name"
                     name="search"
-                    value="by-name"
-                    checked="checked"
+                    value="byName"
+                    checked={this.state.selectedOption === 'byName'}
+                    onChange={this.handleOptionChange}
                   />
                   <label for="by-name" className="label greeny-text">
                     By Movie
@@ -114,7 +123,10 @@ class SearchBox extends React.Component {
                     type="radio"
                     id="by-keyword"
                     name="search"
-                    value="by-keyword"
+                    value="byKeyword"
+                    checked={this.state.selectedOption === 'byKeyword'}
+                    onChange={this.handleOptionChange}
+                  />
                   />
                   <label for="by-keyword" className="label greeny-text">
                     By Keyword
@@ -124,7 +136,7 @@ class SearchBox extends React.Component {
             </div>
           </div>
         </section>
-        <section class="grid-container">
+        <section className="grid-container">
           {moviesFound ? (
             this.state.moviesFound.map(movie => <MovieCard movie={movie} />)
           ) : this.state.moviesFound !== null &&

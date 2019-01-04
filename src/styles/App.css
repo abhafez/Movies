@@ -65,6 +65,9 @@
   @media screen and (max-width: 1220px) {
     .grid-container {
       grid-template-columns: auto auto; } }
+  @media screen and (max-width: 700px) {
+    .grid-container {
+      grid-template-columns: auto; } }
 
 span.badge {
   margin-bottom: 10px;
@@ -809,7 +812,7 @@ li:first-of-type {
 
 footer {
   background-color: #233142;
-  height: 350px;
+  height: 390px;
   bottom: 0;
   position: absolute; }
 
@@ -1047,6 +1050,9 @@ h1.display-2 {
   @media screen and (max-width: 1220px) {
     .grid-container {
       grid-template-columns: auto auto; } }
+  @media screen and (max-width: 700px) {
+    .grid-container {
+      grid-template-columns: auto; } }
 
 span.badge {
   margin-bottom: 10px;

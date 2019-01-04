@@ -117,7 +117,7 @@ class App extends React.Component {
             exact
             path="/"
             render={() => (
-              <div classNameName="container">
+              <div>
                 <Search onSearchResult={this.onSearchResult} />
                 <div className="row">
                   {this.state.randomMovies.map(movie => (
