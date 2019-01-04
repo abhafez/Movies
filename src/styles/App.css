@@ -1,62 +1,79 @@
-#MovieCard .card-header,
-#MovieCard .metadata {
+.grid-item .card-header,
+.grid-item .metadata {
   background: none;
   padding: 0;
   border-style: none; }
 
-#MovieCard .metadata {
+.grid-item .metadata {
   font-size: 16px;
   text-transform: capitalize; }
-  #MovieCard .metadata i,
-  #MovieCard .metadata p {
+  .grid-item .metadata i,
+  .grid-item .metadata p {
     float: left; }
-  #MovieCard .metadata p {
+  .grid-item .metadata p {
     margin-top: 0; }
-  #MovieCard .metadata i {
+  .grid-item .metadata i {
     font-style: none;
     margin-bottom: 15px;
     margin-left: 1px;
     margin-right: 1px; }
 
-#MovieCard .card-img {
+.grid-item .card-img {
   -webkit-clip-path: inset(10% 0 20% 0);
   clip-path: inset(10% 0 20% 0);
   margin-top: -15%; }
 
-#MovieCard .card-body {
+.grid-item .card-body {
   color: #9fa7a9; }
-  #MovieCard .card-body .card-title {
+  .grid-item .card-body .card-title {
+    margin-top: -3.5em;
     font-size: 3em;
     font-weight: 600;
-    color: #414345; }
-  #MovieCard .card-body .card-text {
+    color: #21b2a6; }
+  .grid-item .card-body .card-text {
     font-weight: 600;
     font-size: 2em;
     line-height: 30px; }
 
-#MovieCard .card {
+.grid-item .card {
   width: 375px;
+  height: 650px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-  #MovieCard .card:hover {
+  .grid-item .card:hover {
     -webkit-box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.18);
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.18); }
 
 @media only screen and (max-width: 600px) {
-  #MovieCard .row {
+  .grid-item .row {
     padding-left: 0; } }
 
-#MovieCard .card {
+.grid-item .card {
   border-radius: 8pt;
   border-style: none;
   overflow: hidden;
   -webkit-transform: scale(0.8);
           transform: scale(0.8); }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: #e9e6e6; }
+  @media screen and (max-width: 1600px) {
+    .grid-container {
+      grid-template-columns: auto auto auto; } }
+  @media screen and (max-width: 1220px) {
+    .grid-container {
+      grid-template-columns: auto auto; } }
+
+span.badge {
+  margin-bottom: 10px;
+  font-size: 1em; }
+
+@import url("https://fonts.googleapis.com/css?family=Anton|Lilita+One|Montserrat:400,800");
 /* ===================================================================
  * # normalize
  * ------------------------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css?family=Anton|Lilita+One|Montserrat:400,800");
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -64,7 +81,8 @@ html {
   -webkit-text-size-adjust: 100%; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  background-color: #fbfbfb; }
 
 article,
 aside,
@@ -789,12 +807,11 @@ li:first-of-type {
 .nav-item {
   font-size: 1.5rem; }
 
-/* ===================================================================
- * # footer
- *
- * ------------------------------------------------------------------- */
 footer {
-  background-color: #233142; }
+  background-color: #233142;
+  height: 350px;
+  bottom: 0;
+  position: absolute; }
 
 .section-dark {
   padding: 1em 0;
@@ -805,6 +822,17 @@ footer {
 
 .greeny {
   background-color: #21b2a6; }
+
+.label {
+  font-size: 2em;
+  margin-right: 15px;
+  margin-left: 5px; }
+
+.greeny-text {
+  color: #21b2a6; }
+
+h1.display-2 {
+  margin-top: 0.5em; }
 
 .s-footer {
   padding-top: 5rem;
@@ -908,9 +936,6 @@ footer {
 .footer__site-links li a:focus {
   color: #21b2a6; }
 
-/* -------------------------------------------------------------------
- * ## footer contact
- * ------------------------------------------------------------------- */
 .footer__contact {
   margin-top: 1.4rem; }
   .footer__contact .footer__mail-link {
@@ -955,60 +980,77 @@ footer {
 .go-top a:visited:focus {
   background-color: #00a650; }
 
-#MovieCard .card-header,
-#MovieCard .metadata {
+.grid-item .card-header,
+.grid-item .metadata {
   background: none;
   padding: 0;
   border-style: none; }
 
-#MovieCard .metadata {
+.grid-item .metadata {
   font-size: 16px;
   text-transform: capitalize; }
-  #MovieCard .metadata i,
-  #MovieCard .metadata p {
+  .grid-item .metadata i,
+  .grid-item .metadata p {
     float: left; }
-  #MovieCard .metadata p {
+  .grid-item .metadata p {
     margin-top: 0; }
-  #MovieCard .metadata i {
+  .grid-item .metadata i {
     font-style: none;
     margin-bottom: 15px;
     margin-left: 1px;
     margin-right: 1px; }
 
-#MovieCard .card-img {
+.grid-item .card-img {
   -webkit-clip-path: inset(10% 0 20% 0);
   clip-path: inset(10% 0 20% 0);
   margin-top: -15%; }
 
-#MovieCard .card-body {
+.grid-item .card-body {
   color: #9fa7a9; }
-  #MovieCard .card-body .card-title {
+  .grid-item .card-body .card-title {
+    margin-top: -3.5em;
     font-size: 3em;
     font-weight: 600;
-    color: #414345; }
-  #MovieCard .card-body .card-text {
+    color: #21b2a6; }
+  .grid-item .card-body .card-text {
     font-weight: 600;
     font-size: 2em;
     line-height: 30px; }
 
-#MovieCard .card {
+.grid-item .card {
   width: 375px;
+  height: 650px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-  #MovieCard .card:hover {
+  .grid-item .card:hover {
     -webkit-box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.18);
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.18); }
 
 @media only screen and (max-width: 600px) {
-  #MovieCard .row {
+  .grid-item .row {
     padding-left: 0; } }
 
-#MovieCard .card {
+.grid-item .card {
   border-radius: 8pt;
   border-style: none;
   overflow: hidden;
   -webkit-transform: scale(0.8);
           transform: scale(0.8); }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: #e9e6e6; }
+  @media screen and (max-width: 1600px) {
+    .grid-container {
+      grid-template-columns: auto auto auto; } }
+  @media screen and (max-width: 1220px) {
+    .grid-container {
+      grid-template-columns: auto auto; } }
+
+span.badge {
+  margin-bottom: 10px;
+  font-size: 1em; }
 
 main#movie-details .home_banner_area {
   z-index: 1; }
@@ -1102,3 +1144,11 @@ main#movie-details .banner_area {
       font-size: 48px;
       margin-bottom: 0px;
       font-weight: bold; }
+
+html,
+body {
+  height: 100%;
+  margin: 0; }
+
+.content {
+  min-height: calc(100vh - 250px); }

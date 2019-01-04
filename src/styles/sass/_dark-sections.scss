@@ -1,9 +1,8 @@
-/* ===================================================================
- * # footer
- *
- * ------------------------------------------------------------------- */
 footer {
   background-color: $darker;
+  height: 350px;
+  bottom: 0;
+  position: absolute;
 }
 
 .section-dark {
@@ -19,6 +18,21 @@ footer {
   background-color: $cool-green;
 }
 
+.label {
+  font-size: 2em;
+  margin-right: 15px;
+  margin-left: 5px;
+}
+
+.greeny-text {
+  color: $cool-green;
+}
+
+h1 {
+  &.display-2 {
+    margin-top: 0.5em;
+  }
+}
 .s-footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -146,9 +160,6 @@ footer {
   color: $cool-green;
 }
 
-/* -------------------------------------------------------------------
- * ## footer contact
- * ------------------------------------------------------------------- */
 .footer__contact {
   margin-top: 1.4rem;
 
@@ -202,11 +213,3 @@ footer {
 .go-top a:visited:focus {
   background-color: #00a650;
 }
-
-// .go-top.link-is-visible {
-//   opacity: 0;
-//   visibility: visible;
-//   -webkit-transform: translate3d(0, 0, 0);
-//   -ms-transform: translate3d(0, 0, 0);
-//   transform: translate3d(0, 0, 0);
-// }

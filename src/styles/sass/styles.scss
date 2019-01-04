@@ -1,7 +1,17 @@
-@import "base";
 @import "variables";
+@import "base";
 @import "header";
 @import "navbar";
 @import "dark-sections";
 @import "movie-card";
 @import "movie-details";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.content {
+  min-height: calc(100vh - 250px);
+}

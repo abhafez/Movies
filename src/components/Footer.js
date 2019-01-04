@@ -23,7 +23,7 @@ class Footer extends React.Component {
               <span>
                 Copyright &copy;
                 {new Date().getFullYear()}
-                All rights reserved | This Task is made with
+                All rights reserved | This Task is made with{' '}
                 <i className="fa fa-heart" aria-hidden="true" /> by Abdurrahman
                 Hafez
               </span>

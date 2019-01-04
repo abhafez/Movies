@@ -7,7 +7,7 @@ class Greeting extends React.Component {
     return (
       <div>
         <span>Welcome {userName}</span>,{' '}
-        <Link to="/signin" onClick={e => logOutUser(e)}>
+        <Link to="/login" onClick={e => logOutUser(e)}>
           Logout
         </Link>
       </div>

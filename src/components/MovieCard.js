@@ -12,12 +12,16 @@ class MovieCard extends React.Component {
     } = this.props.movie
 
     return (
-      <div id="MovieCard" className="col-lg-4 col-sm-2">
+      <div className="col-lg-4 col-md-3 col-sm-2 grid-item">
         <div className="card">
           <div className="card-header">
             <img
               className="card-img"
-              src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+              src={
+                poster_path
+                  ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                  : './static/media/noposter_available.jpg'
+              }
               alt={original_title}
             />
           </div>
@@ -29,7 +33,9 @@ class MovieCard extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-4 metadata">
-                  <p>{vote_average}/10</p>
+                  <span className="badge badge-secondary">
+                    Rating: {vote_average}/10
+                  </span>
                 </div>
               </div>
             </div>

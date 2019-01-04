@@ -1,4 +1,4 @@
-#MovieCard {
+.grid-item {
   .card-header,
   .metadata {
     background: none;
@@ -33,13 +33,12 @@
   }
 
   .card-body {
-    // position: relative;
-    // margin-top: -30%;
     color: #9fa7a9;
     .card-title {
+      margin-top: -3.5em;
       font-size: 3em;
       font-weight: 600;
-      color: #414345;
+      color: #21b2a6;
     }
     .card-text {
       // margin-top: 8px;
@@ -51,6 +50,7 @@
 
   .card {
     width: 375px;
+    height: 650px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     &:hover {
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.18);
@@ -66,6 +66,25 @@
     border-style: none;
     overflow: hidden;
     transform: scale(0.8);
-    // margin-top: -60px;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: #e9e6e6;
+
+  @media screen and (max-width: 1600px) {
+    grid-template-columns: auto auto auto;
+  }
+  @media screen and (max-width: 1220px) {
+    grid-template-columns: auto auto;
+  }
+}
+
+span {
+  &.badge {
+    margin-bottom: 10px;
+    font-size: 1em;
   }
 }

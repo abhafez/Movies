@@ -1,4 +1,5 @@
 import firebase from 'firebase/app'
+import Rebase from 're-base'
 import 'firebase/database'
 import 'firebase/auth'
 
@@ -10,8 +11,9 @@ var config = {
   storageBucket: 'my-movies-9569a.appspot.com',
   messagingSenderId: '691351968776'
 }
-firebase.initializeApp(config)
+const app = firebase.initializeApp(config)
 
+export const base = Rebase.createClass(app.database())
 export const provider = new firebase.auth.GoogleAuthProvider()
 export const auth = firebase.auth()
 export const database = firebase.database()

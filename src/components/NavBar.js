@@ -84,8 +84,8 @@ class NavBar extends React.Component {
           {this.props.user === null ? (
             <ul className="navbar-nav ml-auto">
               <li>
-                <Link to="/signin" className="nav-link signin">
-                  Sign In
+                <Link to="/login" className="nav-link signin">
+                  Login
                 </Link>
               </li>
               <li>

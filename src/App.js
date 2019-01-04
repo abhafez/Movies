@@ -1,21 +1,19 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
-
-import firebase from './Firebase'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import * as MoviesAPI from './MoviesAPI'
+import { base } from './Firebase'
 
 import Search from './components/Search'
 import NavBar from './components/NavBar'
 import SignIn from './components/Signin'
 import SignUp from './components/Signup'
 import Footer from './components/Footer'
-import Poster from './components/Poster'
 import MovieCard from './components/MovieCard'
-import FoundMovies from './components/FoundMovies'
 import MovieDetails from './components/MovieDetails'
 import SearchKeyword from './components/SearchKeyword'
-
 import './styles/App.css'
+import firebase from './Firebase'
+
 class App extends React.Component {
   constructor() {
     super()
@@ -75,6 +73,11 @@ class App extends React.Component {
     })
   }
 
+  addMeeting(id) {
+    const ref = firebase.database().ref(`favMovie/${this.state.user.uid}`)
+    ref.push({ id: id })
+  }
+
   onSearchResult(matchMovies) {
     if (matchMovies) {
       this.setState({
@@ -83,53 +86,64 @@ class App extends React.Component {
     }
   }
 
+  componentWillMount() {
+    this.FavListRef = base.syncState('favList', {
+      context: this,
+      state: 'favList'
+    })
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.FavListRef)
+  }
+
   render() {
+    const { user } = this.state
     return (
-      <div>
-        <NavBar user={this.state.user} logOutUser={this.handleSignOut} />
-        <Route
-          path="/search"
-          render={({ history }) => (
-            <div>
-              <Search onSearchResult={this.onSearchResult} />
-              <FoundMovies searchResults={this.state.searchResults} />
-            </div>
-          )}
-        />
-        <Route
-          path="/SearchKeyword"
-          render={({ history }) => (
-            <div>
-              <SearchKeyword onSearchResult={this.onSearchResult} />
-              <FoundMovies searchResults={this.state.searchResults} />
-            </div>
-          )}
-        />
-        <Route
-          exact
-          path="/"
-          render={() => (
-            <div classNameName="container">
-              <div className="row">
-                {this.state.randomMovies.map(movie => (
-                  <MovieCard movie={movie} />
-                ))}
+      <div className="wrapper">
+        <div class="content">
+          <NavBar user={this.state.user} logOutUser={this.handleSignOut} />
+          {/* {user ? <div>favList: {this.state.user.userFavList}</div> : <div />} */}
+
+          <Route path="/search" render={({ history }) => <Redirect to="/" />} />
+          <Route
+            path="/SearchKeyword"
+            render={({ history }) => (
+              <div>
+                <SearchKeyword onSearchResult={this.onSearchResult} />
               </div>
-            </div>
-          )}
-        />
-        {this.state.movieToDisplayId ? <MovieDetails /> : <div />}
-        <Route
-          path="/signin"
-          render={({ history }) => (
-            <SignIn handleUserSignin={this.handleUserSignin} />
-          )}
-        />
-        <Route path="/signup" render={({ history }) => <SignUp />} />
-        <Switch>
-          <Route path="/movies/:id" component={MovieDetails} />
-        </Switch>
-        <Poster />
+            )}
+          />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <div classNameName="container">
+                <Search onSearchResult={this.onSearchResult} />
+                <div className="row">
+                  {this.state.randomMovies.map(movie => (
+                    <MovieCard movie={movie} />
+                  ))}
+                </div>
+              </div>
+            )}
+          />
+          {this.state.movieToDisplayId ? <MovieDetails /> : <div />}
+          <Route
+            path="/login"
+            render={({ history }) =>
+              this.state.user === null ? (
+                <SignIn handleUserSignin={this.handleUserSignin} />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
+          />
+          <Route path="/signup" render={({ history }) => <SignUp />} />
+          <Switch>
+            <Route path="/movies/:id" component={MovieDetails} />
+          </Switch>
+        </div>
         <Footer />
       </div>
     )

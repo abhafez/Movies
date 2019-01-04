@@ -46,11 +46,6 @@ class SignUp extends React.Component {
         registrationInfo.email,
         registrationInfo.password
       )
-      .then(user => {
-        if (user) {
-          // this.props.registerUser(registrationInfo.displayName)
-        }
-      })
       .then(() => {
         this.setState(() => ({
           redirectToReferrer: true
@@ -67,19 +62,19 @@ class SignUp extends React.Component {
 
   render() {
     if (this.state.redirectToReferrer === true) {
-      return <Redirect to="/signin" />
+      return <Redirect to="/login" />
     }
     return (
       <form className="mt-3" onSubmit={this.handleSubmit}>
         <div className="row justify-content-center">
           <div className="col-lg-8">
-            <h3 className="font-weight-light mb-3">Sign Up</h3>
+            <h3 className="font-weight-bold mb-3 mt-5">Sign Up</h3>
             <div className="form-row">
               {this.state.errorMessage !== null ? (
                 <FormWarning theMessage={this.state.errorMessage} />
               ) : null}
               <section className="col-sm-12 form-group">
-                <label
+                {/* <label
                   className="form-control-label sr-only"
                   htmlFor="displayName">
                   Display Name
@@ -93,7 +88,7 @@ class SignUp extends React.Component {
                   required
                   value={this.state.displayName}
                   onChange={this.handleChange}
-                />
+                /> */}
               </section>
             </div>
             <section className="form-group">
@@ -135,7 +130,7 @@ class SignUp extends React.Component {
               </section>
             </div>
             <div className="form-group text-right mb-0">
-              <button className="btn btn-primary" type="submit">
+              <button className="btn greeny mb-5" type="submit">
                 sign up
               </button>
             </div>
