@@ -2,11 +2,9 @@ import React from 'react'
 
 class FormWarning extends React.Component {
   render() {
-    const { warningMessage } = this.props
+    const { theMessage } = this.props
 
-    return (
-      <div className="col-12 alert alert-danger px-3">{warningMessage}</div>
-    )
+    return <div className="col-12 alert alert-danger px-4">{theMessage}</div>
   }
 }
 

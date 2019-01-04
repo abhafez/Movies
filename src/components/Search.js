@@ -54,6 +54,7 @@ class SearchBox extends React.Component {
   }
 
   render() {
+    const { moviesFound } = this.state
     return (
       <div>
         <section class="section-dark">
@@ -88,7 +89,7 @@ class SearchBox extends React.Component {
           </div>
         </section>
         <section>
-          {this.state.moviesFound ? (
+          {moviesFound ? (
             this.state.moviesFound.map(movie => <MovieCard movie={movie} />)
           ) : (
             <div />

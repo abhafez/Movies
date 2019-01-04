@@ -65,15 +65,21 @@ class SearchBox extends React.Component {
   }
 
   render() {
+    const { moviesFound, searchMessage } = this.state
     return (
       <div>
         <section class="section-dark">
           <div class="container">
             <div class="row d-flex">
-              <div class="col-lg-5 heading-white mb-4 mb-sm-4 mb-lg-0 text-light">
-                <h1 className="display-2">{this.state.searchMessage}</h1>
+              <div class="col-lg-7 offset-2 heading-white mb-4 mb-sm-4 mb-lg-0 text-light">
+                <p>
+                  Here you can find movies with a specific category : Drama,
+                  Comedy, Crime etc...
+                </p>
+                <h1 className="display-2">{searchMessage}</h1>
+                {/* todo: CSS make movie message don't exceed specific size */}
               </div>
-              <div class="col-lg-7 ftco-wrap search__form">
+              <div class="col-lg-7 offset-2 ftco-wrap search__form">
                 <div class="input__form">
                   <form id="sm-form" action="#" class="d-flex">
                     <input
@@ -99,8 +105,8 @@ class SearchBox extends React.Component {
           </div>
         </section>
         <section>
-          {this.state.moviesFound ? (
-            this.state.moviesFound.map(movie => <MovieCard movie={movie} />)
+          {moviesFound ? (
+            moviesFound.map(movie => <MovieCard movie={movie} />)
           ) : (
             <div />
           )}

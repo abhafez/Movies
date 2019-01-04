@@ -81,9 +81,17 @@ class MovieDetails extends React.Component {
                       <button
                         className="search-domain btn text-center greeny"
                         onClick={this.handleFavList}>
-                        {favList
-                          ? 'Remove From My Movies'
-                          : 'Add to Your Movies'}
+                        {favList ? (
+                          <i className="fa fa-minus" aria-hidden="true">
+                            {' '}
+                            Remove From <strong>MyMovies</strong>
+                          </i>
+                        ) : (
+                          <i className="fa fa-plus" aria-hidden="true">
+                            {' '}
+                            Add to <strong>MyMovies</strong>
+                          </i>
+                        )}
                       </button>
                     </div>
                   </div>

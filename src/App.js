@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import firebase from './Firebase'
 import * as MoviesAPI from './MoviesAPI'
@@ -66,14 +66,7 @@ class App extends React.Component {
   }
 
   handleSignOut(e) {
-    // this.setState({
-    //   userID: null,
-    //   user: null
-    // })
     firebase.auth().signOut()
-    // .then(() => {
-    //   Redirect('/login')
-    // })
   }
 
   handleUserSignin(user) {

@@ -2,12 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 class MovieCard extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-
-  componentDidMount() {}
   render() {
     const {
       vote_average,

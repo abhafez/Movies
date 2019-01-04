@@ -11,15 +11,6 @@ class Footer extends React.Component {
         </div>
 
         <div className="row footer__bottom">
-          {/* <div className="col-five tab-full">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-          </div> */}
-
           <div className="col-six tab-full end">
             <p className="footer__contact">
               Did you like this Single Page App? Send me a word: <br />

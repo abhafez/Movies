@@ -10,12 +10,7 @@ class FoundMovies extends React.Component {
   render() {
     return (
       <div classNameName="container">
-        <div className="row">
-          {this.props.searchResults.map(movie =>
-            // <MovieCard key={movie.id} movie={movie} />
-            console.log(movie)
-          )}
-        </div>
+        <div className="row" />
       </div>
     )
   }

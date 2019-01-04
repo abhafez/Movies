@@ -50,7 +50,9 @@ class SignIn extends React.Component {
   }
 
   render() {
-    if (this.state.redirectToReferrer === true) {
+    const { redirectToReferrer, errorMessage, password, email } = this.state
+
+    if (redirectToReferrer === true) {
       return <Redirect to="/" />
     }
 
@@ -60,8 +62,8 @@ class SignIn extends React.Component {
           <div className="col-lg-6">
             <h3 className="font-weight-light mb-3">Log in</h3>
             <section className="form-group">
-              {this.state.errorMessage !== null ? (
-                <FormWarning theMessage={this.state.errorMessage} />
+              {errorMessage !== null ? (
+                <FormWarning theMessage={errorMessage} />
               ) : null}
               <label className="form-control-label sr-only" htmlFor="Email">
                 Email
@@ -73,7 +75,7 @@ class SignIn extends React.Component {
                 id="email"
                 name="email"
                 placeholder="Email"
-                value={this.state.email}
+                value={email}
                 onChange={this.handleChange}
               />
             </section>
@@ -84,7 +86,7 @@ class SignIn extends React.Component {
                 type="password"
                 name="password"
                 placeholder="Password"
-                value={this.state.password}
+                value={password}
                 onChange={this.handleChange}
               />
             </section>
