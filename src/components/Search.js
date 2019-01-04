@@ -98,7 +98,7 @@ class SearchBox extends React.Component {
               </div>
             </div>
             <div className="row">
-              <div className="col-lg-6 offset-8">
+              <div className="col-lg-6 col-md-12 offset-6">
                 <form action="select-search-method">
                   <input
                     type="radio"

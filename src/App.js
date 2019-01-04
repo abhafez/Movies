@@ -24,8 +24,7 @@ class App extends React.Component {
       // userID: null,
       searchResults: [],
       movieToDisplayId: null,
-      userFavList: [],
-      movie: 205
+      userFavList: []
     }
     this.handleUserSignin = this.handleUserSignin.bind(this)
     this.onSearchResult = this.onSearchResult.bind(this)

@@ -59,7 +59,7 @@ class NavBar extends React.Component {
         </button>
 
         <div className="collapse navbar-collapse" id="toggler">
-          <ul className="navbar-nav mr-auto">
+          {/* <ul className="navbar-nav mr-auto">
             <li className="nav-item">
               <Link className="nav-link" to="/">
                 Home
@@ -74,13 +74,12 @@ class NavBar extends React.Component {
               <Link className="nav-link" to="/SearchKeyword">
                 Search By Keyword
               </Link>
-            </li>
             {/* <li className="nav-item">
               <Link className="nav-link" to="/">
                 My Fav List
               </Link>
-            </li> */}
-          </ul>
+            </li>
+          </ul> */}
           {this.props.user === null ? (
             <ul className="navbar-nav ml-auto">
               <li>

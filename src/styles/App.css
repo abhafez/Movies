@@ -851,8 +851,8 @@ h1.display-2 {
   .s-footer .footer__top [class*="col-"]:first-child {
     padding-right: 10px; }
   .s-footer .footer__bottom {
-    margin-top: 3.8rem;
-    padding-top: 1.9rem;
+    margin-top: 2rem;
+    padding-top: 0.9rem;
     border-top: 1px solid rgba(255, 255, 255, 0.03); }
 
 .search__form .input__form {
