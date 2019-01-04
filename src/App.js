@@ -10,7 +10,6 @@ import SignUp from './components/Signup'
 import Footer from './components/Footer'
 import MovieCard from './components/MovieCard'
 import MovieDetails from './components/MovieDetails'
-import SearchKeyword from './components/SearchKeyword'
 import './styles/App.css'
 import firebase from './Firebase'
 
@@ -103,14 +102,6 @@ class App extends React.Component {
           {/* {user ? <div>favList: {this.state.user.userFavList}</div> : <div />} */}
 
           <Route path="/search" render={({ history }) => <Redirect to="/" />} />
-          <Route
-            path="/SearchKeyword"
-            render={({ history }) => (
-              <div>
-                <SearchKeyword onSearchResult={this.onSearchResult} />
-              </div>
-            )}
-          />
           <Route
             exact
             path="/"

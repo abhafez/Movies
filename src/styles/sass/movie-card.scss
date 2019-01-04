@@ -85,6 +85,10 @@
   }
 }
 
+.grid-container .zs-container {
+  grid-column: 2 / 4;
+}
+
 span {
   &.badge {
     margin-bottom: 10px;

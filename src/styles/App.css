@@ -69,6 +69,9 @@
     .grid-container {
       grid-template-columns: auto; } }
 
+.grid-container .zs-container {
+  grid-column: 2 / 4; }
+
 span.badge {
   margin-bottom: 10px;
   font-size: 1em; }
@@ -1054,13 +1057,12 @@ h1.display-2 {
     .grid-container {
       grid-template-columns: auto; } }
 
+.grid-container .zs-container {
+  grid-column: 2 / 4; }
+
 span.badge {
   margin-bottom: 10px;
   font-size: 1em; }
-
-.zs-container {
-  margin: 0 auto;
-  background-color: red; }
 
 html,
 body {

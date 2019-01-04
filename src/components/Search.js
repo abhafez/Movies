@@ -130,7 +130,6 @@ class SearchBox extends React.Component {
                     checked={this.state.selectedOption === 'byKeyword'}
                     onChange={this.handleOptionChange}
                   />
-                  />
                   <label for="by-keyword" className="label greeny-text">
                     By Keyword
                   </label>
