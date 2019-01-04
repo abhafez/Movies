@@ -8,7 +8,7 @@ class SearchBox extends React.Component {
     super(props)
     this.state = {
       query: '',
-      moviesFound: null,
+      moviesFound: [],
       searchMessage: 'Find Your Movie',
       selectedOption: 'byName'
     }
@@ -19,7 +19,8 @@ class SearchBox extends React.Component {
 
   componentDidMount() {
     this.setState({
-      moviesFound: null
+      moviesFound: [],
+      query: ''
     })
   }
 
@@ -35,6 +36,7 @@ class SearchBox extends React.Component {
 
   findMoviesByName(e) {
     e.preventDefault()
+    if (this.state.query.length === 0) return
     searchMovie(this.state.query).then(res => {
       this.setState({
         moviesFound: res.results
@@ -45,6 +47,7 @@ class SearchBox extends React.Component {
   findMoviesByKeyword(e) {
     e.preventDefault()
     let movies = []
+    if (this.state.query.length === 0) return
     searchByKeyword(this.state.query)
       .then(res => res.results)
       .then(items =>
@@ -137,14 +140,13 @@ class SearchBox extends React.Component {
           </div>
         </section>
         <section className="grid-container">
-          {moviesFound ? (
-            this.state.moviesFound.map(movie => <MovieCard movie={movie} />)
-          ) : this.state.moviesFound !== null &&
-            this.state.moviesFound.length === 0 ? (
-              <ZeroState />
-            ) : (
-              <div />
-            )}
+          {moviesFound.length > 0 ? (
+            moviesFound.map(movie => <MovieCard movie={movie} />)
+          ) : moviesFound.length === 0 ? (
+            <ZeroState />
+          ) : (
+            <div />
+          )}
         </section>
       </div>
     )

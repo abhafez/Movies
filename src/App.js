@@ -19,9 +19,8 @@ class App extends React.Component {
     super()
     this.state = {
       user: null,
-      randomMovies: [],
+      todaysMovies: [],
       displayName: null,
-      // userID: null,
       searchResults: [],
       movieToDisplayId: null,
       userFavList: []
@@ -31,17 +30,16 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const random = [206, 307, 101]
-    // todo: randomize
-    const randomMovie = []
+    const random = [508, 453, 238, 118]
+    const todaysMovies = []
     random.map(id =>
       MoviesAPI.getMovie(id)
         .then(movie => {
-          randomMovie.push(movie)
+          todaysMovies.push(movie)
         })
         .then(() => {
           this.setState({
-            randomMovies: randomMovie
+            todaysMovies: todaysMovies
           })
         })
     )
@@ -97,7 +95,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { user } = this.state
+    const { user, todaysMovies, movieToDisplayId } = this.state
     return (
       <div className="wrapper">
         <div class="content">
@@ -119,19 +117,14 @@ class App extends React.Component {
             render={() => (
               <div>
                 <Search onSearchResult={this.onSearchResult} />
-                <div className="row">
-                  {this.state.randomMovies.map(movie => (
-                    <MovieCard movie={movie} />
-                  ))}
-                </div>
               </div>
             )}
           />
-          {this.state.movieToDisplayId ? <MovieDetails /> : <div />}
+          {movieToDisplayId ? <MovieDetails /> : <div />}
           <Route
             path="/login"
             render={({ history }) =>
-              this.state.user === null ? (
+              user === null ? (
                 <SignIn handleUserSignin={this.handleUserSignin} />
               ) : (
                 <Redirect to="/" />
@@ -142,6 +135,13 @@ class App extends React.Component {
           <Switch>
             <Route path="/movies/:id" component={MovieDetails} />
           </Switch>
+        </div>
+        <div>
+          <div className="grid-container">
+            {todaysMovies.map(movie => (
+              <MovieCard movie={movie} />
+            ))}
+          </div>
         </div>
         <Footer />
       </div>

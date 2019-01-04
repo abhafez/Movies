@@ -105,7 +105,7 @@ class SearchBox extends React.Component {
           </div>
         </section>
         <section>
-          {moviesFound ? (
+          {moviesFound.length > 0 ? (
             moviesFound.map(movie => <MovieCard movie={movie} />)
           ) : (
             <div />

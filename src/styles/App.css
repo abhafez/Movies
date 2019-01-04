@@ -1058,103 +1058,11 @@ span.badge {
   margin-bottom: 10px;
   font-size: 1em; }
 
-main#movie-details .home_banner_area {
-  z-index: 1; }
-  main#movie-details .home_banner_area .box_1620 {
-    min-height: 700px;
-    border-radius: 12px;
-    bottom: -200px;
-    -webkit-box-shadow: 0px 0px 80px 0px rgba(153, 153, 153, 0.3);
-            box-shadow: 0px 0px 80px 0px rgba(153, 153, 153, 0.3); }
-  main#movie-details .home_banner_area .banner_inner {
-    position: relative;
-    width: 100%;
-    min-height: 37.5em;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-    main#movie-details .home_banner_area .banner_inner .banner_content {
-      vertical-align: top;
-      -ms-flex-item-align: center;
-          align-self: center;
-      text-align: left; }
-      main#movie-details .home_banner_area .banner_inner .banner_content .media .d-flex {
-        padding-right: 25px; }
-      main#movie-details .home_banner_area .banner_inner .banner_content .media .media-body {
-        vertical-align: top;
-        -ms-flex-item-align: center;
-            align-self: center; }
-
-main#movie-details .blog_banner {
-  min-height: 780px;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  margin-bottom: 0px; }
-  main#movie-details .blog_banner .banner_inner {
-    background: #04091e;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    min-height: 780px;
-    z-index: 1; }
-    main#movie-details .blog_banner .banner_inner .overlay {
-      opacity: 0.5;
-      height: 125%;
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 100%;
-      z-index: -1; }
-    main#movie-details .blog_banner .banner_inner .blog_b_text {
-      max-width: 700px;
-      margin: auto;
-      color: #fff; }
-      main#movie-details .blog_banner .banner_inner .blog_b_text h1 {
-        font-size: 60px;
-        font-weight: bold;
-        line-height: 66px;
-        margin-bottom: 15px;
-        text-transform: uppercase; }
-      main#movie-details .blog_banner .banner_inner .blog_b_text p {
-        font-size: 16px;
-        margin-bottom: 35px; }
-      main#movie-details .blog_banner .banner_inner .blog_b_text .white_bg_btn {
-        line-height: 42px;
-        padding: 0px 45px;
-        border-radius: 5px; }
-
-main#movie-details .banner_box {
-  max-width: 1620px;
-  margin: auto; }
-
-main#movie-details .banner_area {
-  position: relative;
-  z-index: 1;
-  min-height: 350px;
-  margin-bottom: 120px; }
-  main#movie-details .banner_area .box_1620 {
-    min-height: 360px;
-    border-radius: 12px;
-    position: relative;
-    bottom: -120px;
-    -webkit-box-shadow: 0px 20px 80px 0px rgba(153, 153, 153, 0.3);
-            box-shadow: 0px 20px 80px 0px rgba(153, 153, 153, 0.3); }
-  main#movie-details .banner_area .banner_inner {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    min-height: 360px;
-    z-index: 1; }
-    main#movie-details .banner_area .banner_inner .banner_content h1 {
-      font-size: 48px;
-      margin-bottom: 0px;
-      font-weight: bold; }
+.zs-container {
+  margin: 0 auto;
+  background-color: red; }
 
 html,
 body {
   height: 100%;
   margin: 0; }
-
-.content {
-  min-height: calc(100vh - 250px); }

@@ -5,13 +5,9 @@
 @import "dark-sections";
 @import "movie-card";
 @import "movie-details";
-
+@import "zero-state";
 html,
 body {
   height: 100%;
   margin: 0;
-}
-
-.content {
-  min-height: calc(100vh - 250px);
 }
