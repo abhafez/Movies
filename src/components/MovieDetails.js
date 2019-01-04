@@ -48,58 +48,54 @@ class MovieDetails extends React.Component {
       // todo: make some fancy loading circle.
       <div className="loading" />
     ) : (
-      <main id="movie-details" className="grid-container">
-        <section className="home_banner_area">
-          <div>
-            <div className="d-flex">
-              <img
-                src={`https://image.tmdb.org/t/p/w200/${
-                  currentMovie.poster_path
-                }`}
-                alt={currentMovie.original_title}
-              />
-            </div>
-            <div className="media-body">
-              <div className="">
-                <h1 className="display-3">{currentMovie.title}</h1>
-                <p>
-                  <span>Release Date: </span>
-                  {currentMovie.release_date}
-                </p>
-                <p>
-                  <span>Rate: </span>
-                  {currentMovie.vote_average}/10
-                </p>
-                <br />
-                <p>{currentMovie.overview}</p>
-                <br />
-                <p>
-                  <span>Run Time: </span>
-                  {currentMovie.runtime}
-                </p>
-                <p>
-                  <span>Original Language:</span>
-                  {currentMovie.original_language}
-                </p>
-                <button
-                  className="search-domain btn text-center greeny"
-                  onClick={this.handleFavList}>
-                  {favList ? (
-                    <i className="fa fa-minus" aria-hidden="true">
-                      {' '}
-                      Remove From <strong>MyMovies</strong>
-                    </i>
-                  ) : (
-                    <i className="fa fa-plus" aria-hidden="true">
-                      {' '}
-                      Add to <strong>MyMovies</strong>
-                    </i>
-                  )}
-                </button>
-              </div>
+      <main id="movie-details" className="movie-details">
+        <div className="md-sub">
+          <img
+            src={`https://image.tmdb.org/t/p/w200/${currentMovie.poster_path}`}
+            alt={currentMovie.original_title}
+          />
+        </div>
+        <div className="md-sub">
+          <div className="media-body">
+            <div className="">
+              <h1 className="display-2">{currentMovie.title}</h1>
+              <p className="lead">
+                <span>Release Date: </span>
+                {currentMovie.release_date}
+              </p>
+              <p className="lead">
+                <span>Rate: </span>
+                {currentMovie.vote_average}/10
+              </p>
+              <br />
+              <p className="lead">{currentMovie.overview}</p>
+              <br />
+              <p className="lead">
+                <span>Run Time: </span>
+                {currentMovie.runtime}
+              </p>
+              <p className="lead">
+                <span>Original Language:</span>
+                {currentMovie.original_language}
+              </p>
+              <button
+                className="search-domain btn text-center greeny"
+                onClick={this.handleFavList}>
+                {favList ? (
+                  <i className="fa fa-minus" aria-hidden="true">
+                    {' '}
+                    Remove From <strong>MyMovies</strong>
+                  </i>
+                ) : (
+                  <i className="fa fa-plus" aria-hidden="true">
+                    {' '}
+                    Add to <strong>MyMovies</strong>
+                  </i>
+                )}
+              </button>
             </div>
           </div>
-        </section>
+        </div>
       </main>
     )
   }

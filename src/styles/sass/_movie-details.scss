@@ -113,3 +113,33 @@
 //     }
 //   }
 // }
+
+.movie-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fbfbfb;
+  @media screen and (max-width: 611px) {
+    grid-template-columns: auto;
+  }
+}
+
+.md-sub {
+  margin: 0 auto;
+  text-align: left;
+  resize: both;
+  overflow: auto;
+  img {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 5px;
+    // margin-left: 60em;
+  }
+  p {
+    margin-left: 20px;
+    font-size: 2.5em;
+  }
+  button {
+    display: block;
+    margin: 2em;
+  }
+}

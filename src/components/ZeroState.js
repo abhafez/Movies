@@ -9,7 +9,7 @@ class ZeroState extends React.Component {
     return (
       <div className="zs-container">
         <i className="fa fa-heart" aria-hidden="true" />
-        Hello
+        <p class="display-2">No search results found</p>
       </div>
     )
   }
