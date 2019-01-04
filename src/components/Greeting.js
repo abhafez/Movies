@@ -1,11 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class Greeting extends React.Component {
   render() {
-    const { userName } = this.props
+    const { userName, logOutUser } = this.props
     return (
       <div>
-        <span>Welcome {userName}</span>, <a>Sign Out</a>
+        <span>Welcome {userName}</span>,{' '}
+        <Link to="/signin" onClick={e => logOutUser(e)}>
+          Logout
+        </Link>
       </div>
     )
   }

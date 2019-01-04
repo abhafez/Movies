@@ -1,6 +1,7 @@
 import React from 'react'
 import FormWarning from './FormWarning'
 import firebase from '../Firebase'
+import { Redirect } from 'react-router-dom'
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -10,7 +11,8 @@ class SignUp extends React.Component {
       email: '',
       passOne: '',
       passTwo: '',
-      errorMessage: null
+      errorMessage: null,
+      redirectToReferrer: false
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -46,10 +48,13 @@ class SignUp extends React.Component {
       )
       .then(user => {
         if (user) {
-          user.updateProfile({
-            displayName: registrationInfo.displayName
-          })
+          // this.props.registerUser(registrationInfo.displayName)
         }
+      })
+      .then(() => {
+        this.setState(() => ({
+          redirectToReferrer: true
+        }))
       })
       .catch(error => {
         if (error.message !== null) {
@@ -61,6 +66,9 @@ class SignUp extends React.Component {
   }
 
   render() {
+    if (this.state.redirectToReferrer === true) {
+      return <Redirect to="/signin" />
+    }
     return (
       <form className="mt-3" onSubmit={this.handleSubmit}>
         <div className="row justify-content-center">

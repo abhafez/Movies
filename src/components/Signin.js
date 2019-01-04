@@ -53,6 +53,7 @@ class SignIn extends React.Component {
     if (this.state.redirectToReferrer === true) {
       return <Redirect to="/" />
     }
+
     return (
       <form className="mt-5 mb-5" onSubmit={this.handleSubmit}>
         <div className="row justify-content-center">

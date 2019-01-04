@@ -32,8 +32,7 @@ class SearchBox extends React.Component {
 
   findMovies(e) {
     e.preventDefault()
-    let foundId = [],
-      movies = []
+    let movies = []
     searchByKeyword(this.state.query)
       .then(res => res.results)
       .then(items =>

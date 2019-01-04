@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 import firebase from './Firebase'
 import * as MoviesAPI from './MoviesAPI'
@@ -23,7 +23,7 @@ class App extends React.Component {
       user: null,
       randomMovies: [],
       displayName: null,
-      userID: null,
+      // userID: null,
       searchResults: [],
       movieToDisplayId: null,
       userFavList: [],
@@ -51,11 +51,29 @@ class App extends React.Component {
 
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        console.log(user)
+        this.setState({
+          user: user,
+          displayName: user.displayName,
+          userId: user.uid
+        })
       } else {
-        this.setState({ user: null })
+        this.setState({
+          userID: null,
+          user: null
+        })
       }
     })
+  }
+
+  handleSignOut(e) {
+    // this.setState({
+    //   userID: null,
+    //   user: null
+    // })
+    firebase.auth().signOut()
+    // .then(() => {
+    //   Redirect('/login')
+    // })
   }
 
   handleUserSignin(user) {
@@ -75,7 +93,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <NavBar user={this.state.user} />
+        <NavBar user={this.state.user} logOutUser={this.handleSignOut} />
         <Route
           path="/search"
           render={({ history }) => (

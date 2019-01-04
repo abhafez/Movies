@@ -1,14 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Greeting from './Greeting'
-import { searchByKeyword } from '../MoviesAPI'
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      hiddenByClick: false,
-      name: null
+      hiddenByClick: false
     }
     this.toggleBarVisibility = this.toggleBarVisibility.bind(this)
     this.hideShowMenu = this.hideShowMenu.bind(this)
@@ -33,7 +31,8 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { userName } = this.props
+    const userEmail = this.props.user === null ? '' : this.props.user.email
+    const { logOutUser } = this.props
 
     return (
       <nav className="navbar navbar-expand-lg navbar-light greeny">
@@ -77,12 +76,12 @@ class NavBar extends React.Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link disabled" to="#">
+              <Link className="nav-link disabled" to="/">
                 About
               </Link>
             </li>
           </ul>
-          {this.state.name === null ? (
+          {this.props.user === null ? (
             <ul className="navbar-nav ml-auto">
               <li>
                 <Link to="/signin" className="nav-link signin">
@@ -96,7 +95,7 @@ class NavBar extends React.Component {
               </li>
             </ul>
           ) : (
-            <Greeting userName={userName} />
+            <Greeting userName={userEmail} logOutUser={this.props.logOutUser} />
           )}
         </div>
       </nav>
