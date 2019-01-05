@@ -31,8 +31,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const userEmail = this.props.user === null ? '' : this.props.user.email
-    const { logOutUser } = this.props
+    const { logOutUser, user } = this.props
 
     return (
       <nav className="navbar navbar-expand-lg navbar-light greeny">
@@ -94,7 +93,7 @@ class NavBar extends React.Component {
               </li>
             </ul>
           ) : (
-            <Greeting userName={userEmail} logOutUser={logOutUser} />
+            <Greeting userName={user.displayName} logOutUser={logOutUser} />
           )}
         </div>
       </nav>

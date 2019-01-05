@@ -21,8 +21,7 @@ class App extends React.Component {
       todaysMovies: [],
       displayName: null,
       searchResults: [],
-      movieToDisplayId: null,
-      userFavList: []
+      movieToDisplayId: null
     }
     this.handleUserSignin = this.handleUserSignin.bind(this)
     this.onSearchResult = this.onSearchResult.bind(this)
@@ -48,11 +47,11 @@ class App extends React.Component {
         this.setState({
           user: user,
           displayName: user.displayName,
-          userId: user.uid
+          userId: user.uid,
+          userFavList: [200, 300]
         })
       } else {
         this.setState({
-          userID: null,
           user: null
         })
       }
@@ -87,6 +86,18 @@ class App extends React.Component {
       context: this,
       state: 'favList'
     })
+
+    var FBuser = firebase.auth().currentUser
+
+    if (FBuser != null) {
+      FBuser.providerData.forEach(function(profile) {
+        console.log('Sign-in provider: ' + profile.providerId)
+        console.log('  Provider-specific UID: ' + profile.uid)
+        console.log('  Name: ' + profile.displayName)
+        console.log('  Email: ' + profile.email)
+        console.log('  Photo URL: ' + profile.photoURL)
+      })
+    }
   }
 
   componentWillUnmount() {
@@ -97,7 +108,7 @@ class App extends React.Component {
     const { user, todaysMovies, movieToDisplayId } = this.state
     return (
       <div className="wrapper">
-        <div class="content">
+        <div className="content">
           <NavBar user={this.state.user} logOutUser={this.handleSignOut} />
           {/* {user ? <div>favList: {this.state.user.userFavList}</div> : <div />} */}
 
@@ -129,7 +140,7 @@ class App extends React.Component {
         </div>
         <div>
           <h2 className="text-center display-3 tonight lighter-gray">
-            Tonight on MyMovies Chaneel
+            Tonight on MyMovies Channel
           </h2>
           <div className="grid-container lighter-gray">
             {todaysMovies.map(movie => (

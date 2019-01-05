@@ -812,9 +812,8 @@ li .nav-link {
 li:first-of-type {
   margin-left: 2em; }
 
-@media screen and (max-width: 992px) {
-  #welcome-msg {
-    display: none; } }
+.welcome-msg {
+  font-size: 2em; }
 
 .nav-item {
   font-size: 1.5rem; }

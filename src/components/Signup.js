@@ -33,7 +33,7 @@ class SignUp extends React.Component {
   }
 
   handleSubmit(e) {
-    var registrationInfo = {
+    let registrationInfo = {
       displayName: this.state.displayName,
       email: this.state.email,
       password: this.state.passOne
@@ -46,6 +46,13 @@ class SignUp extends React.Component {
         registrationInfo.email,
         registrationInfo.password
       )
+      .then(() => {
+        let subscriber = firebase.auth().currentUser
+
+        subscriber.updateProfile({
+          displayName: registrationInfo.displayName
+        })
+      })
       .then(() => {
         this.setState(() => ({
           redirectToReferrer: true
@@ -74,7 +81,7 @@ class SignUp extends React.Component {
                 <FormWarning theMessage={this.state.errorMessage} />
               ) : null}
               <section className="col-sm-12 form-group">
-                {/* <label
+                <label
                   className="form-control-label sr-only"
                   htmlFor="displayName">
                   Display Name
@@ -88,7 +95,7 @@ class SignUp extends React.Component {
                   required
                   value={this.state.displayName}
                   onChange={this.handleChange}
-                /> */}
+                />
               </section>
             </div>
             <section className="form-group">
