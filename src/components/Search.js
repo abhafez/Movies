@@ -30,11 +30,6 @@ class SearchBox extends React.Component {
     this.setState({ query: query })
   }
 
-  // On search cancel
-  clearQuery() {
-    this.setState({ query: '' })
-  }
-
   findMoviesByName(e) {
     e.preventDefault()
     if (this.state.query.length === 0) return

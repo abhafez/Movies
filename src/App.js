@@ -69,7 +69,7 @@ class App extends React.Component {
     })
   }
 
-  addMeeting(id) {
+  addMovie(id) {
     const ref = firebase.database().ref(`favMovie/${this.state.user.uid}`)
     ref.push({ id: id })
   }
@@ -128,7 +128,10 @@ class App extends React.Component {
           </Switch>
         </div>
         <div>
-          <div className="grid-container">
+          <h2 className="text-center display-3 tonight lighter-gray">
+            Tonight on MyMovies Chaneel
+          </h2>
+          <div className="grid-container lighter-gray">
             {todaysMovies.map(movie => (
               <MovieCard movie={movie} />
             ))}
